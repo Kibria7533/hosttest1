@@ -357,7 +357,7 @@ class Managegretting extends Component {
                           width: "300px",
                           height: "240px",
                         }}
-                        src={`http://localhost:5000/${this.state.image}`}
+                        src={`https://chaincomebd.herokuapp.com/${this.state.image}`}
                         alt={`sliderImg`}
                       />
                     </div>

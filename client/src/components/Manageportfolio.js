@@ -350,7 +350,7 @@ class Manageportfolio extends Component {
                         width: "300px",
                         height: "240px",
                       }}
-                      src={`http://localhost:5000/${this.state.Image}`}
+                      src={`https://chaincomebd.herokuapp.com/${this.state.Image}`}
                       alt={`portfoliosImg`}
                     />
                   </div>
@@ -398,7 +398,7 @@ class Manageportfolio extends Component {
                       <td data-label="Image">
                         <img
                           style={{ width: "200px", height: "200px" }}
-                          src={`http://localhost:5000/${portfolios.img}`}
+                          src={`https://chaincomebd.herokuapp.com/${portfolios.img}`}
                           alt={`portfoliosImg`}
                         />
                       </td>

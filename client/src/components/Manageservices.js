@@ -354,7 +354,7 @@ class Manageservices extends Component {
                         width: "300px",
                         height: "240px",
                       }}
-                      src={`http://localhost:5000/${this.state.Image}`}
+                      src={`https://chaincomebd.herokuapp.com/${this.state.Image}`}
                       alt={`servicesImg`}
                     />
                   </div>
@@ -412,7 +412,7 @@ class Manageservices extends Component {
                       <td data-label="Image">
                         <img
                           style={{ width: "200px", height: "200px" }}
-                          src={`http://localhost:5000/${services.img}`}
+                          src={`https://chaincomebd.herokuapp.com/${services.img}`}
                           alt={`servicesImg`}
                         />
                       </td>
