@@ -79,17 +79,10 @@ app.use(require("./routes/setting"));
 app.use("/uploads", express.static("uploads"));
 
 if (process.env.NODE_ENV === "production") {
+  // Set the static assets folder (ie, client build)
   app.use(express.static("client/build"));
-  app.get("/*", function (req, res) {
-    res.sendFile(
-      path.join(__dirname, "client", "public", "index.html"),
-      function (err) {
-        if (err) {
-          console.log(err);
-          res.status(500).send(err);
-        }
-      }
-    );
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
 
