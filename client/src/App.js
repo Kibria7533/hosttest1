@@ -98,12 +98,6 @@ function App() {
         />
         <Route path="/services" exact component={Services} />
 
-        {/* <Route path="/pricing" exact component={Pricing} />
-<Route path="/portfolio3" exact component={Portfolioshow3} />
-<Route path="/404" exact component={Projectshow} />
-<Route path="/singleproject" exact component={Singleproject} />
-<Route path="/blog" exact component={Blog} />
-<Route path="/blog-post" exact component={Blogpost} /> */}
         <Route component={four} />
       </Switch>
     </BrowserRouter>
