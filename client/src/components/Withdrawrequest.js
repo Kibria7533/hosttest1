@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, NavLink } from "react-router-dom";
 import URL from "./Url";
 import Moment from "react-moment";
+import Dropdown from "react-bootstrap/Dropdown";
 class Withdrawrequest extends Component {
   state = {
     withdraw: [],
@@ -108,113 +109,100 @@ class Withdrawrequest extends Component {
             >
               Dashboard
             </Link>
-            <Link className="list-group-item list-group-item-action bg-light">
-              <ul className="list-unstyled">
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link  dropdown-toggle"
-                    data-toggle="dropdown"
-                  >
-                    Manage Users
-                  </a>
-                  <ul className="dropdown-menu dropdown-menu-right">
-                    <li>
-                      <Link to="/alluser" className="dropdown-item">
-                        All User
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/userrequest" className="dropdown-item">
-                        User Requests
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </Link>
-            <Link className="list-group-item list-group-item-action bg-light">
-              <ul className="list-unstyled">
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link  dropdown-toggle"
-                    data-toggle="dropdown"
-                  >
-                    Withdraw Manage
-                  </a>
-                  <ul className="dropdown-menu dropdown-menu-right">
-                    <li>
-                      <Link to="/allwithdraw" className="dropdown-item">
-                        All Withdraws
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/withdrawrequest" className="dropdown-item">
-                        Withdraw Requests
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </Link>
-            <Link className="list-group-item list-group-item-action bg-light">
-              <ul className="list-unstyled">
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link  dropdown-toggle"
-                    data-toggle="dropdown"
-                  >
-                    Settings
-                  </a>
-                  <ul className="dropdown-menu dropdown-menu-right">
-                    <li>
-                      <Link to="/manageslider" className="dropdown-item">
-                        Manage Slider
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/managegreeting" className="dropdown-item">
-                        Manage Gretting
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/manageservices" className="dropdown-item">
-                        Manage Services
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="manageportfolio" className="dropdown-item">
-                        Manage Portfolio
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/managebussiness" className="dropdown-item">
-                        Manage Business
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/managemission" className="dropdown-item">
-                        Manage Mission
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/managevission" className="dropdown-item">
-                        Manage Vission
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/manageteam" className="dropdown-item">
-                        Manage Team
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/managefaq" className="dropdown-item">
-                        Manage Faq
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </Link>
+            <Dropdown>
+              <Dropdown.Toggle
+                style={{ fontSize: "0px", width: "0px", height: "0px" }}
+                id="dropdown-basic"
+              ></Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-2">
+                  <Link to="/alluser" className="dropdown-item">
+                    All User
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  <Link to="/userrequest" className="dropdown-item">
+                    User Requests
+                  </Link>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Dropdown>
+              <Dropdown.Toggle
+                style={{ fontSize: "0px", width: "0px", height: "0px" }}
+                id="dropdown-basic"
+              ></Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-2">
+                  <Link to="/allwithdraw" className="dropdown-item">
+                    All Withdraws
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  <Link to="/withdrawrequest" className="dropdown-item">
+                    Withdraw Requests
+                  </Link>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Dropdown>
+              <Dropdown.Toggle
+                style={{ fontSize: "0px", width: "0px", height: "0px" }}
+                id="dropdown-basic"
+              ></Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-2">
+                  <Link to="/manageslider" className="dropdown-item">
+                    Manage Slider
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  <Link to="/managegreeting" className="dropdown-item">
+                    Manage Gretting
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  <Link to="/manageservices" className="dropdown-item">
+                    Manage Services
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  <Link to="manageportfolio" className="dropdown-item">
+                    Manage Portfolio
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  <Link to="/managebussiness" className="dropdown-item">
+                    Manage Business
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  <Link to="/managemission" className="dropdown-item">
+                    Manage Mission
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  <Link to="/managevission" className="dropdown-item">
+                    Manage Vission
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  <Link to="/manageteam" className="dropdown-item">
+                    Manage Team
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  <Link to="/managefaq" className="dropdown-item">
+                    Manage Faq
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  <Link to="/manageothers" className="dropdown-item">
+                    Others
+                  </Link>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
         {/* /#sidebar-wrapper */}
