@@ -25,16 +25,6 @@ connection.once("open", () => {
 app.use(require("./routes/users"));
 app.use(require("./routes/withdraw"));
 app.use(require("./routes/setting"));
-app.use(function (req, res, next) {
-  //Enabling CORS
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Typ, Accept, x-client-key, x-client-token, x-client-secret, Authorization"
-  );
-  next();
-});
 
 // app.post('/webhook', (req, res) => {
 
@@ -87,7 +77,7 @@ app.use(function (req, res, next) {
 //   }
 // });
 app.use("/uploads", express.static("uploads"));
-app.use("/uploads", express.static("uploads"));
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("/", function (req, res) {
