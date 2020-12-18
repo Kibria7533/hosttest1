@@ -121,8 +121,7 @@ router.get(
 
 router.get(
   "/profile/:username",
-  userAuth,
-  checkRole(["user", "admin"]),
+
   async (req, res) => {
     console.log(req.params.username);
 
