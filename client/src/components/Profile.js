@@ -64,8 +64,9 @@ export default class Profile extends Component {
         auth: localStorage.getItem("auth"),
       },
     })
-      .then((res) => {
-        this.setState({ profile: res.data });
+      .then((rest) => {
+        console.log(rest);
+        this.setState({ profile: rest.data });
       })
       .catch((err) => {
         console.log(err);
