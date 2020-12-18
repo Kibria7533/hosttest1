@@ -49,8 +49,8 @@ import {
 import Copy from "./Copy";
 
 export default class Profile extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       profile: [],
     };
