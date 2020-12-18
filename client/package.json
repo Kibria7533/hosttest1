@@ -2,8 +2,8 @@
   "name": "to-do",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://chaincomebd.herokuapp.com",
-  "homepage": "https://chaincomebd.herokuapp.com",
+  "proxy": "https://newchaincome.herokuapp.com",
+  "homepage": "https://newchaincome.herokuapp.com",
 
   "dependencies": {
     "@agney/react-loading": "^0.1.2",
