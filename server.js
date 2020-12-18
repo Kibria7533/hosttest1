@@ -21,7 +21,7 @@ const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
 });
-
+app.disable("etag");
 app.use(require("./routes/users"));
 app.use(require("./routes/withdraw"));
 app.use(require("./routes/setting"));
