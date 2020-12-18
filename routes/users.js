@@ -119,13 +119,18 @@ router.get(
   }
 );
 
-router.get("/profile/:username", userAuth, async (req, res) => {
-  console.log(req.params.username);
+router.get(
+  "/profile/:username",
+  userAuth,
+  checkRole(["user", "admin"]),
+  async (req, res) => {
+    console.log(req.params.username);
 
-  const user = await User.find({ username: req.params.username });
+    const user = await User.find({ username: req.params.username });
 
-  return res.json(user);
-});
+    return res.json(user);
+  }
+);
 router.get("/downlines/:myref", userAuth, async (req, res) => {
   console.log(req.params.myref);
 

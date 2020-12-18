@@ -149,7 +149,7 @@ class Aboutus extends Component {
                   <div className="col-lg-6">
                     <img
                       className="img-fluid rounded mb-4"
-                      src={`https://chaincomebd.herokuapp.com/${item.bussinessimg}`}
+                      src={`${URL}/${item.bussinessimg}`}
                       alt=""
                     />
                   </div>
@@ -179,7 +179,7 @@ class Aboutus extends Component {
                     <div className="right-ab">
                       <img
                         className="img-fluid rounded mb-4"
-                        src={`https://chaincomebd.herokuapp.com/${item.missionimg}`}
+                        src={`${URL}/${item.missionimg}`}
                         alt=""
                       />
                     </div>
@@ -195,7 +195,7 @@ class Aboutus extends Component {
                     <div className="right-ab">
                       <img
                         className="img-fluid rounded mb-4"
-                        src={`https://chaincomebd.herokuapp.com/${item.vissionimg}`}
+                        src={`${URL}/${item.vissionimg}`}
                         alt=""
                       />
                     </div>
@@ -223,7 +223,7 @@ class Aboutus extends Component {
                       <div className="our-team">
                         <img
                           className="img-fluid"
-                          src={`https://chaincomebd.herokuapp.com/${item.img}`}
+                          src={`${URL}/${item.img}`}
                           alt=""
                         />
                         <div className="team-content">

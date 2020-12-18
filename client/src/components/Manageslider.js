@@ -352,7 +352,7 @@ class Manageslider extends Component {
                         width: "300px",
                         height: "240px",
                       }}
-                      src={`http://localhost:5000/${this.state.Image}`}
+                      src={`${URL}/${this.state.Image}`}
                       alt={`sliderImg`}
                     />
                   </div>
@@ -410,7 +410,7 @@ class Manageslider extends Component {
                       <td data-label="Image">
                         <img
                           style={{ width: "200px", height: "200px" }}
-                          src={`http://localhost:5000/${slider.img}`}
+                          src={`${URL}/${slider.img}`}
                           alt={`sliderImg`}
                         />
                       </td>

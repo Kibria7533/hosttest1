@@ -162,7 +162,7 @@ class Faq extends Component {
                         >
                           <img
                             className="card-img-top"
-                            src={`http://localhost:5000/${item.img}`}
+                            src={`${URL}/${item.img}`}
                             alt=""
                           />
                           <div className="overlay">

@@ -142,7 +142,7 @@ class Home extends Component {
         {/* <img
           className="img-fluid rounded"
           style={{ width: "100%", height: "400px" }}
-          src={`https://chaincomebd.herokuapp.com/${this.state.slide.img}`}
+          src={`${URL}/${this.state.slide.img}`}
           alt=""
         /> */}
         {/* 
@@ -162,7 +162,7 @@ class Home extends Component {
                       <img
                         className="img-fluid rounded"
                         style={{ width: "100%", height: "400px" }}
-                        src={`https://chaincomebd.herokuapp.com/${item.img}`}
+                        src={`${URL}/${item.img}`}
                         alt=""
                       />
                     </h4>
@@ -187,7 +187,7 @@ class Home extends Component {
                     <img
                       className="img-fluid rounded"
                       style={{ width: "100%", height: "420px" }}
-                      src={`https://chaincomebd.herokuapp.com/${item.greetingimg}`}
+                      src={`${URL}/${item.greetingimg}`}
                       alt=""
                     />
                   </div>
@@ -210,7 +210,7 @@ class Home extends Component {
                       <div className="card-img">
                         <img
                           className="img-fluid"
-                          src={`https://chaincomebd.herokuapp.com/${item.img}`}
+                          src={`${URL}/${item.img}`}
                           alt=""
                         />
                       </div>

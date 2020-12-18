@@ -382,7 +382,7 @@ class Manageteam extends Component {
                         width: "300px",
                         height: "240px",
                       }}
-                      src={`https://chaincomebd.herokuapp.com/${this.state.Image}`}
+                      src={`${URL}/${this.state.Image}`}
                       alt={`teamsImg`}
                     />
                   </div>
@@ -526,7 +526,7 @@ class Manageteam extends Component {
                       <td data-label="Image">
                         <img
                           style={{ width: "40px", height: "40px" }}
-                          src={`https://chaincomebd.herokuapp.com/${teams.img}`}
+                          src={`${URL}/${teams.img}`}
                           alt={`teamsImg`}
                         />
                       </td>

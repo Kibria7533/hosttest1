@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../model/Users");
 const Setting = require("../model/Setting");
+const { Error } = require("mongoose");
 
 const userRegister = async (userDets, role, res) => {
   try {
@@ -253,6 +254,7 @@ const userRegister = async (userDets, role, res) => {
       },
       (error, result, fullResult) => {
         if (error) {
+          console.log(error);
           return res.json({
             messege: {
               msg: "gmail sent problem",
