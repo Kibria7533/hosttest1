@@ -127,7 +127,7 @@ router.get(
 
     const user = await User.find({ username: req.params.username });
 
-    return res.send(user);
+    res.send(user);
   }
 );
 router.get("/downlines/:myref", userAuth, async (req, res) => {
@@ -135,7 +135,7 @@ router.get("/downlines/:myref", userAuth, async (req, res) => {
 
   const user = await User.find({ myparentref: req.params.myref });
 
-  return res.send(user);
+  res.send(user);
 });
 
 router.post("/login-admin", async (req, res) => {
