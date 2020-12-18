@@ -56,7 +56,7 @@ export default class Profile extends Component {
     };
   }
 
-  async componentDidMount() {
+  fetchprofile = async () => {
     await axios
       .get(`${URL}/profile/${this.props.match.params.username}`, {
         headers: {
@@ -71,6 +71,10 @@ export default class Profile extends Component {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  componentDidMount() {
+    this.fetchprofile();
   }
   render() {
     return (
