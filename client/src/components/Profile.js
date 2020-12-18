@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Axios from "axios";
+import axios from "axios";
 import URL from "./Url";
 import Avatar from "react-avatar";
 import Header from "./Header";
@@ -57,13 +57,13 @@ export default class Profile extends Component {
   }
 
   async componentDidMount() {
-    await Axios.get(`${URL}/profile/${this.props.match.params.username}`, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        auth: localStorage.getItem("auth"),
-      },
-    })
+    await axios
+      .get(`${URL}/profile/${this.props.match.params.username}`, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      })
       .then((rest) => {
         console.log(rest);
         this.setState({ profile: rest.data });
