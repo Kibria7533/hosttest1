@@ -58,7 +58,7 @@ export default class Profile extends Component {
 
   fetchprofile = async () => {
     await axios
-      .get(`${URL}/profile/${this.props.match.params.username}`, {
+      .get(`${URL}/pro/${this.props.match.params.username}`, {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

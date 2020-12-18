@@ -119,7 +119,7 @@ router.get(
   }
 );
 
-router.get("/profile/:username", async (req, res) => {
+router.get("/pro/:username", async (req, res) => {
   console.log(req.params.username);
   await User.find({ username: req.params.username }).then((user) => {
     res.send(user);
