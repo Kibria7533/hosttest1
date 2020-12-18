@@ -41,7 +41,7 @@ const userRegister = async (userDets, role, res) => {
     );
     const send = require("gmail-send")({
       user: "tenminuteversity@gmail.com",
-      pass: process.env.pass,
+      pass: "drrlzwvpemeluees",
       to: userDets.email,
       subject: "Wellcome to Chaincomebd",
       html: `<!DOCTYPE html>
@@ -460,7 +460,7 @@ const Useractivate = async (email, res) => {
 
       const send = require("gmail-send")({
         user: "tenminuteversity@gmail.com",
-        pass: process.env.pass,
+        pass: "drrlzwvpemeluees",
         to: email,
         subject: "Activate your account",
         html: `<!DOCTYPE html>
