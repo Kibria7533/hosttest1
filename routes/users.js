@@ -123,11 +123,9 @@ router.get(
   "/profile/:username",
 
   async (req, res) => {
-    console.log(req.params.username);
-
-    const user = await User.find({ username: req.params.username });
-
-    res.send(user);
+    await User.find({ username: req.params.username }).then((user) => {
+      res.send(user);
+    });
   }
 );
 router.get("/downlines/:myref", userAuth, async (req, res) => {
