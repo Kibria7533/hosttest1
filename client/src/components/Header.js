@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Avatar from "react-avatar";
 import { Link, NavLink } from "react-router-dom";
-import Dropdown from "react-bootstrap/Dropdown";
+import { Navbar, Nav, NavDropdown, Row } from "react-bootstrap";
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -81,163 +81,91 @@ class Header extends Component {
             </div>
           </div>
         </div>
-
-        <nav className="navbar navbar-expand-lg navbar-dark bg-light top-nav">
-          <div className="container">
-            <Link className="navbar-brand" to="/">
-              <img src="images/chainlogo.png" alt="logo" />
-            </Link>
-            <button
-              className="navbar-toggler navbar-toggler-right"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarResponsive"
-              aria-controls="navbarResponsive"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="fas fa-bars" style={{ color: "black" }} />
-            </button>
-            <div className="collapse navbar-collapse" id="navbarResponsive">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/home">
-                    Home
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/about">
-                    About Chaincome
-                  </NavLink>
-                </li>
-
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/shop">
-                    Shop
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/faq">
-                    Notifications
-                  </NavLink>
-                </li>
-
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/contact">
-                    Contact
-                  </NavLink>
-                </li>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="/">
+            {" "}
+            <img src="images/chainlogo.png" alt="logo" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse
+            id="basic-navbar-nav"
+            style={{ justifyContent: "flex-end" }}
+          >
+            <Nav className="mr-0">
+              <NavLink className="nav-link" to="/home">
+                Home
+              </NavLink>
+              <NavLink className="nav-link" to="/about">
+                About Chaincome
+              </NavLink>
+              <NavLink className="nav-link" to="/shop">
+                Shop
+              </NavLink>
+              <NavLink className="nav-link" to="/faq">
+                Notifications
+              </NavLink>
+              <NavLink className="nav-link" to="/contact">
+                Contact
+              </NavLink>
+              <NavDropdown
+                id="basic-nav-dropdown"
+                style={{ marginRight: "120px" }}
+              >
                 {this.state.auth ? (
-                  <Dropdown>
-                    <Dropdown.Toggle
-                      style={{ fontSize: "0px", width: "0px", height: "0px" }}
-                      id="dropdown-basic"
-                    >
-                      <a
-                        className="nav-link  dropdown-toggle"
-                        data-toggle="dropdown"
+                  <>
+                    <NavDropdown.Item href="#action/3.1">
+                      <NavLink
+                        className="nav-link"
+                        to={`/profile/${this.state.username}`}
                       >
-                        <Avatar
-                          size="30"
-                          round
-                          style={{ marginTop: "2px" }}
-                          facebook-id="invalidfacebookusername"
-                          src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3"
-                        />
-                      </a>
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-2">
-                        <a
-                          className="dropdown-item"
-                          href={`/profile/${this.state.username}`}
-                        >
-                          Myself
-                        </a>
-                      </Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">
-                        <a className="dropdown-item" href="/invite">
-                          Invite Others
-                        </a>
-                      </Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">
-                        <a className="dropdown-item" href="/earning">
-                          My Walet
-                        </a>
-                      </Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">
-                        <a className="dropdown-item" href="/logout">
-                          Logout
-                        </a>
-                      </Dropdown.Item>
-                      {
-                        this.state.admin && (
-                          <Dropdown.Item href="#/action-3">
-                            <a className="nav-link" href="/dashboard">
-                              <i
-                                className="fa fa-home"
-                                style={{ fontSize: "28px", color: "blue" }}
-                              ></i>
-                            </a>
-                          </Dropdown.Item>
-                        )
-                        //  <a className="nav-link" href="/admindashboard" style={{ "marginTop": "-34px",
-                        //  "marginLeft": "22px"}}><i className="fa fa-home" style={{"fontSize":"28px","color":"blue"}}></i></a>
-                      }
-                    </Dropdown.Menu>
-                  </Dropdown>
+                        Profile
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.2">
+                      <NavLink className="nav-link" to="/invite">
+                        Invite Others
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">
+                      <NavLink className="nav-link" to="/earning">
+                        Walet
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action/3.4">
+                      <NavLink className="nav-link" to="/logout">
+                        Logout
+                      </NavLink>
+                    </NavDropdown.Item>
+                  </>
                 ) : (
-                  <Dropdown>
-                    <Dropdown.Toggle
-                      style={{ fontSize: "0px", width: "0px", height: "0px" }}
-                      id="dropdown-basic"
-                    >
-                      <a
-                        className="nav-link  dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <Avatar
-                          size="30"
-                          round
-                          style={{ marginTop: "2px" }}
-                          facebook-id="invalidfacebookusername"
-                          src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3"
-                        />
-                      </a>
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-2">
-                        <a className="dropdown-item" href="/userregister">
-                          Register
-                        </a>
-                      </Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">
-                        <a className="dropdown-item" href="/userlogin">
-                          Login
-                        </a>
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                  <>
+                    <NavDropdown.Item href="#action/3.1">
+                      <NavLink className="nav-link" to="/userregister">
+                        Register
+                      </NavLink>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.2">
+                      <NavLink className="nav-link" to="/userlogin">
+                        Login
+                      </NavLink>
+                    </NavDropdown.Item>
+                  </>
                 )}
-                {/* {
-                  this.state.admin && (
-                    <li className="nav-item ">
-                      <a className="nav-link" href="/dashboard">
-                        <i
-                          className="fa fa-home"
-                          style={{ fontSize: "28px", color: "blue" }}
-                        ></i>
-                      </a>
-                    </li>
-                  )
-                  //  <a className="nav-link" href="/admindashboard" style={{ "marginTop": "-34px",
-                  //  "marginLeft": "22px"}}><i className="fa fa-home" style={{"fontSize":"28px","color":"blue"}}></i></a>
-                } */}
-              </ul>
-            </div>
-          </div>
-        </nav>
+              </NavDropdown>
+              {this.state.admin && (
+                <NavLink className="nav-link" to="/dashboard">
+                  <Avatar
+                    name={this.state.username}
+                    round
+                    size="30"
+                    textSizeRatio={1.75}
+                  />
+                </NavLink>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       </div>
     );
   }

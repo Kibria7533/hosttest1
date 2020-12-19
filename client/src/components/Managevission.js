@@ -26,7 +26,7 @@ class Managevission extends Component {
   Change = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  onDrop = (files) => {
+  onDrop = async (files) => {
     console.log(files[0]);
 
     let formData = new FormData();
@@ -35,7 +35,7 @@ class Managevission extends Component {
     };
     formData.append("file", files[0]);
     //save the Image we chose inside the Node Server
-    axios
+    await axios
       .post(`${URL}/uploadImage`, formData, config)
       .then((response) => {
         if (response.data.success) {

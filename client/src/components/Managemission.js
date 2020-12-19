@@ -357,7 +357,7 @@ class Managemission extends Component {
                           width: "300px",
                           height: "240px",
                         }}
-                        src={`https://chaincomebd.herokuapp.com/${this.state.image}`}
+                        src={`${URL}/${this.state.image}`}
                         alt={`sliderImg`}
                       />
                     </div>

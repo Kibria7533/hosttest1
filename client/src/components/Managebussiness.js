@@ -26,7 +26,7 @@ class Managebussiness extends Component {
   Change = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  onDrop = (files) => {
+  onDrop = async (files) => {
     console.log(files[0]);
 
     let formData = new FormData();
@@ -35,7 +35,7 @@ class Managebussiness extends Component {
     };
     formData.append("file", files[0]);
     //save the Image we chose inside the Node Server
-    axios
+    await axios
       .post(`${URL}/uploadImage`, formData, config)
       .then((response) => {
         if (response.data.success) {
@@ -357,7 +357,7 @@ class Managebussiness extends Component {
                           width: "300px",
                           height: "240px",
                         }}
-                        src={`https://chaincomebd.herokuapp.com/${this.state.image}`}
+                        src={`${URL}/${this.state.image}`}
                         alt={`sliderImg`}
                       />
                     </div>
