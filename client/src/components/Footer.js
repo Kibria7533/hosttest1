@@ -72,8 +72,8 @@ class Footer extends Component {
                       <i className="fab fa-twitter fleft padding-right" />{" "}
                     </a>
                     <p>
-                      Chaincome facebook book
-                      <a href="https://www.facebook.com/chaincome.bond.5">
+                      Chaincome facebook Page
+                      <a href="https://www.facebook.com/chaincome247">
                         Click here
                       </a>
                     </p>

@@ -21,14 +21,14 @@ const userRegister = async (userDets, role, res) => {
         messege: { msg: "Email already taken", success: false },
       });
     }
-    let referrence = await User.find({ myref: userDets.myparentref });
-    console.log("jj", referrence);
+    // let referrence = await User.find({ myref: userDets.myparentref });
+    // console.log("jj", referrence);
 
-    if (!referrence.length) {
-      return res.json({
-        messege: { msg: "We didnt find any reference", success: false },
-      });
-    }
+    // if (!referrence.length) {
+    //   return res.json({
+    //     messege: { msg: "We didnt find any reference", success: false },
+    //   });
+    // }
     const password = await bcrypt.hash(userDets.password, 10);
     let activeToken = jwt.sign(
       {

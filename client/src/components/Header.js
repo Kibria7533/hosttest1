@@ -48,10 +48,19 @@ class Header extends Component {
                         <i className="fab fa-facebook-f" />
                       </Link>
                     </li>
-
                     <li>
-                      <Link to="#">
+                      <Link to="https://www.instagram.com/p/CI-vYVKrPCx/?igshid=185toy97k7j7y">
+                        <i className="fab fa-instagram" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="https://youtube.com/channel/UCfMIJQuS0Dv-QvcXuQiI9rw">
                         <i className="fab fa-google-plus-g" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="https://twitter.com/Chaincome1?s=09">
+                        <i className="fab fa-twitter" />
                       </Link>
                     </li>
                   </ul>

@@ -491,7 +491,7 @@ router.post(
     const send = require("gmail-send")({
       user: "chaincome2020@gmail.com",
       pass: "eheypsrlkrhyjbio",
-      to: "chaincome2020@gmail.com",
+      to: "chaincomebd@gmail.com",
       subject: req.body.fullname,
     });
 
