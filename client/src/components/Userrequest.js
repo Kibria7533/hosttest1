@@ -249,8 +249,7 @@ class Userrequest extends Component {
               <thead>
                 <th>S No</th>
                 <th>Name</th>
-                <th>Post Code</th>
-                <th>Mobile Number</th>
+
                 <th>Email</th>
                 <th>Gender</th>
                 <th>Payment Type</th>
@@ -265,8 +264,7 @@ class Userrequest extends Component {
                     <tr key={index}>
                       <td data-label="S.No">{index + 1}</td>
                       <td data-label="Name">{data.fullname}</td>
-                      <td data-label="Post Code">{data.postcode}</td>
-                      <td data-label="Mobile Number">{data.mobile}</td>
+
                       <td data-label="Email">{data.email}</td>
                       <td data-label="Gender">{data.gender}</td>
                       <td data-label="Payment Type">{data.paymenttype}</td>
