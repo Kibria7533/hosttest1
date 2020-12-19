@@ -141,7 +141,7 @@ class four extends Component {
   };
   fetchammount = async () => {
     await axios
-      .get(`${URL}/profile/${localStorage.getItem("username")}`, {
+      .get(`${URL}/pro/${localStorage.getItem("username")}`, {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
