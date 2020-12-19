@@ -431,22 +431,31 @@ const Useractivate = async (email, res) => {
         async (parent) => {
           if (parent) {
             const commission = await Setting.find({}, { commission: 1 });
-            parent.earning =
-              parseInt(parent.earning) + parseInt(commission[0].commission);
-            parent.myrefused = parseInt(parent.myrefused) + 1;
+            if (commission) {
+              parent.earning =
+                parseInt(parent.earning) + parseInt(commission[0].commission);
+              parent.myrefused = parseInt(parent.myrefused) + 1;
 
-            parent
-              .save()
-              .then((data) => {
-                console.log("ff", data);
-                res.json({
-                  data: data,
-                  success: true,
+              parent
+                .save()
+                .then((data) => {
+                  console.log("ff", data);
+                  res.json({
+                    data: data,
+                    success: true,
+                  });
+                })
+                .catch((error) => {
+                  console.log(error);
                 });
-              })
-              .catch((error) => {
-                console.log(error);
+            } else {
+              return res.status(404).json({
+                messege: {
+                  msg: "Failed to activate",
+                  success: false,
+                },
               });
+            }
           } else {
             return res.status(404).json({
               messege: {
