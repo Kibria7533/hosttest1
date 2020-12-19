@@ -44,28 +44,14 @@ class Header extends Component {
                 <div className="social-media">
                   <ul>
                     <li>
-                      <Link to="#">
+                      <Link to="https://www.facebook.com/chaincome.bond.5">
                         <i className="fab fa-facebook-f" />
                       </Link>
                     </li>
-                    <li>
-                      <Link to="#">
-                        <i className="fab fa-twitter" />
-                      </Link>
-                    </li>
+
                     <li>
                       <Link to="#">
                         <i className="fab fa-google-plus-g" />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#">
-                        <i className="fab fa-linkedin-in" />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#">
-                        <i className="fab fa-instagram" />
                       </Link>
                     </li>
                   </ul>
@@ -75,11 +61,10 @@ class Header extends Component {
                 <div className="contact-details">
                   <ul>
                     <li>
-                      <i className="fas fa-phone fa-rotate-90" /> +01611513467
+                      <i className="fas fa-phone fa-rotate-90" /> +01854563442
                     </li>
                     <li>
-                      <i className="fas fa-map-marker-alt" /> 8/99 , Dhaka ,
-                      Tongi
+                      <i className="fas fa-map-marker-alt" /> Mirpur 2, Dhaka
                     </li>
                   </ul>
                 </div>

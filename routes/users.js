@@ -190,8 +190,8 @@ router.post("/forgotpassordorusername", async (req, res) => {
 
   try {
     const send = require("gmail-send")({
-      user: "tenminuteversity@gmail.com",
-      pass: "drrlzwvpemeluees",
+      user: "chaincome2020@gmail.com",
+      pass: "eheypsrlkrhyjbio",
       to: req.body.email,
       subject: "Recover your account & Change Your Password",
       html: `<!DOCTYPE html>
@@ -325,11 +325,7 @@ router.post("/forgotpassordorusername", async (req, res) => {
                 <tr>
                     <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                            <tr>
-                                <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                                    <p style="margin: 0;">We're excited to have you get started. First, you need to confirm your account. Just press the button below.</p>
-                                </td>
-                            </tr>
+                            
                             <tr>
                                 <td bgcolor="#ffffff" align="left">
                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -337,7 +333,7 @@ router.post("/forgotpassordorusername", async (req, res) => {
                                             <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
                                                 <table border="0" cellspacing="0" cellpadding="0">
                                                     <tr>
-                                                        <td align="center" style="border-radius: 3px;" bgcolor="#FFA73B"><a href="http://localhost:3000/forgotpasswordform/${forgetpasswordToken}" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;">Confirm Account</a></td>
+                                                        <td align="center" style="border-radius: 3px;" bgcolor="#FFA73B"><a href="https://newchaincome.herokuapp.com/forgotpasswordform/${forgetpasswordToken}" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;">Click here</a></td>
                                                     </tr>
                                                 </table>
                                             </td>
@@ -345,14 +341,10 @@ router.post("/forgotpassordorusername", async (req, res) => {
                                     </table>
                                 </td>
                             </tr> <!-- COPY -->
-                            <tr>
-                                <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                                    <p style="margin: 0;">If that doesn't work, copy and paste the following link in your browser:</p>
-                                </td>
-                            </tr> <!-- COPY -->
+                           
                             <tr>
                                 <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                                    <p style="margin: 0;"><a href="#" target="_blank" style="color: #FFA73B;">https://bit.li.utlddssdstueincx</a></p>
+                                    <p style="margin: 0;"><a href="https://www.facebook.com/chaincome.bond.5" target="_blank" style="color: #FFA73B;">https://bit.li.utlddssdstueincx</a></p>
                                 </td>
                             </tr>
                             <tr>
@@ -362,7 +354,7 @@ router.post("/forgotpassordorusername", async (req, res) => {
                             </tr>
                             <tr>
                                 <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 40px 30px; border-radius: 0px 0px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                                    <p style="margin: 0;">Cheers,<br>BBB Team</p>
+                                    <p style="margin: 0;">Cheers,<br>Chaincome Team</p>
                                 </td>
                             </tr>
                         </table>
@@ -383,11 +375,7 @@ router.post("/forgotpassordorusername", async (req, res) => {
                 <tr>
                     <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                            <tr>
-                                <td bgcolor="#f4f4f4" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;"> <br>
-                                    <p style="margin: 0;">If these emails get annoying, please feel free to <a href="#" target="_blank" style="color: #111111; font-weight: 700;">unsubscribe</a>.</p>
-                                </td>
-                            </tr>
+                            
                         </table>
                     </td>
                 </tr>
@@ -501,9 +489,9 @@ router.post(
     }
 
     const send = require("gmail-send")({
-      user: "tenminuteversity@gmail.com",
-      pass: process.env.pass,
-      to: "tirppledevbd@gmail.com",
+      user: "chaincome2020@gmail.com",
+      pass: "eheypsrlkrhyjbio",
+      to: "chaincome2020@gmail.com",
       subject: req.body.fullname,
     });
 

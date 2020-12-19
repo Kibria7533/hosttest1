@@ -292,7 +292,7 @@ class Userregister extends Component {
                         </div>
                         <div className="form-group">
                           <label>Payment Number</label>
-                          <h4 style={{ marginLeft: "20px" }}>: 01720588884</h4>
+                          <h4 style={{ marginLeft: "20px" }}>: 01854563442</h4>
                         </div>
                         <div className="form-group">
                           <input

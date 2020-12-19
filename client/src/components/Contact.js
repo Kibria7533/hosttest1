@@ -165,17 +165,20 @@ class Contact extends Component {
               <div className="col-lg-4 mb-4 contact-right">
                 <h3>Contact Details</h3>
                 <p>
-                  3481 Melrose Place
+                  Mirpur 2
                   <br />
-                  Beverly Hills, CA 90210
+                  Dhaka
                   <br />
                 </p>
                 <p>
-                  <abbr title="Phone">P</abbr>: (123) 456-7890
+                  <abbr title="Phone">P</abbr>: 01854563442
                 </p>
                 <p>
                   <abbr title="Email">E</abbr>:
-                  <a href="mailto:name@example.com"> name@example.com </a>
+                  <a href="mailto:chaincome2020@gmail.com">
+                    {" "}
+                    chaincome2020@gmail.com{" "}
+                  </a>
                 </p>
                 <p>
                   <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00
