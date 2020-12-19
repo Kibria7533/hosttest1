@@ -278,6 +278,7 @@ const userRegister = async (userDets, role, res) => {
             const newUser = new User({
               ...userDets,
               myref: number,
+              myrefused: 0,
               password,
               role,
               activeToken,
@@ -432,8 +433,7 @@ const Useractivate = async (email, res) => {
             const commission = await Setting.find({}, { commission: 1 });
             parent.earning =
               parseInt(parent.earning) + parseInt(commission[0].commission);
-            parent.earning =
-              parseInt(parent.earning) + parseInt(commission[0].commission);
+            parent.myrefused = parseInt(parent.myrefused) + 1;
 
             parent
               .save()
