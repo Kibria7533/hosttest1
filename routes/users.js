@@ -191,7 +191,7 @@ router.post("/forgotpassordorusername", async (req, res) => {
   try {
     const send = require("gmail-send")({
       user: "tenminuteversity@gmail.com",
-      pass: process.env.pass,
+      pass: "drrlzwvpemeluees",
       to: req.body.email,
       subject: "Recover your account & Change Your Password",
       html: `<!DOCTYPE html>
