@@ -76,11 +76,10 @@ class Userrequest extends Component {
         }
       )
       .then((data) => {
-        console.log("uuu", data.data);
-        // this.componentDidMount();
-        // if (data.data.length) {
-        //   this.setState({ withdraw: data.data, loding: false, redirect: true });
-        // }
+        console.log("uuu", data.data.success);
+        if (data.data.success) {
+          alert("Activation link send");
+        }
       })
       .catch((err) => {
         console.log("ffff", err);
