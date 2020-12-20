@@ -9,6 +9,7 @@ const {
   userAuth,
   checkRole,
   Useractivate,
+  Newuseractivate,
 } = require("../utils/Auth");
 router.post(
   "/register",
@@ -83,7 +84,9 @@ router.get("/active/:activeToken", (req, res, next) => {
       } else {
         user.confirmed = true;
         user.save().then((ok) => {
-          res.send("completed registration");
+          res.statusCode = 302;
+          res.setHeader("Location", "/userlogin");
+          return res.end();
         });
       }
     }
@@ -166,8 +169,12 @@ router.get("/deleteuser/:id", async (req, res) => {
     });
 });
 
+// router.get("/sendactivationlink/:email", async (req, res) => {
+//   await Useractivate(req.params.email, res);
+//   // console.log(req.params.email)
+// });
 router.get("/sendactivationlink/:email", async (req, res) => {
-  await Useractivate(req.params.email, res);
+  await Newuseractivate(req.params.email, res);
   // console.log(req.params.email)
 });
 
