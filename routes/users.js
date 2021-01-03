@@ -194,11 +194,12 @@ router.post("/forgotpassordorusername", async (req, res) => {
     process.env.SECRET,
     { expiresIn: "1 days" }
   );
-
+  // user: "chaincome2020@gmail.com",
+  // pass: "eheypsrlkrhyjbio",
   try {
     const send = require("gmail-send")({
-      user: "chaincome2020@gmail.com",
-      pass: "eheypsrlkrhyjbio",
+      user: process.env.Mailstore,
+      pass: process.env.pass,
       to: req.body.email,
       subject: "Recover your account & Change Your Password",
       html: `<!DOCTYPE html>
@@ -340,7 +341,7 @@ router.post("/forgotpassordorusername", async (req, res) => {
                                             <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
                                                 <table border="0" cellspacing="0" cellpadding="0">
                                                     <tr>
-                                                        <td align="center" style="border-radius: 3px;" bgcolor="#FFA73B"><a href="https://newchaincome.herokuapp.com/forgotpasswordform/${forgetpasswordToken}" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;">Click here</a></td>
+                                                        <td align="center" style="border-radius: 3px;" bgcolor="#FFA73B"><a href="${process.env.Call_Back}/forgotpasswordform/${forgetpasswordToken}" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;">Click here</a></td>
                                                     </tr>
                                                 </table>
                                             </td>
@@ -496,8 +497,8 @@ router.post(
     }
 
     const send = require("gmail-send")({
-      user: "chaincome2020@gmail.com",
-      pass: "eheypsrlkrhyjbio",
+      user: process.env.Mailstore,
+      pass: process.env.pass,
       to: "chaincomebd@gmail.com",
       subject: req.body.fullname,
     });

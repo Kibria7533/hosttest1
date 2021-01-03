@@ -23,14 +23,13 @@ const userRegister = async (userDets, role, res) => {
         messege: { msg: "Email already taken", success: false },
       });
     }
-    // let referrence = await User.find({ myref: userDets.myparentref });
-    // console.log("jj", referrence);
+    let referrence = await User.find({ myref: userDets.myparentref });
 
-    // if (!referrence.length) {
-    //   return res.json({
-    //     messege: { msg: "We didnt find any reference", success: false },
-    //   });
-    // }
+    if (!referrence.length) {
+      return res.json({
+        messege: { msg: "We didnt find any reference", success: false },
+      });
+    }
     const password = await bcrypt.hash(userDets.password, 10);
     let activeToken = jwt.sign(
       {
@@ -42,8 +41,8 @@ const userRegister = async (userDets, role, res) => {
       }
     );
     const send = require("gmail-send")({
-      user: "chaincome2020@gmail.com",
-      pass: "eheypsrlkrhyjbio",
+      user: process.env.Mailstore,
+      pass: process.env.pass,
       to: userDets.email,
       subject: "Wellcome to Chaincomebd",
       html: `<!DOCTYPE html>
@@ -252,11 +251,14 @@ const userRegister = async (userDets, role, res) => {
         } else {
           function getNumber(callback) {
             var n = Math.floor(Math.random() * 1000);
-            User.findOne({ myref: n }, function (err, result) {
-              if (err) callback(err);
-              else if (result) return getNumber(callback);
-              else callback(null, n);
-            });
+            User.findOne(
+              { $and: [{ myref: n }, { myparentref: n }] },
+              function (err, result) {
+                if (err) callback(err);
+                else if (result) return getNumber(callback);
+                else callback(null, n);
+              }
+            );
           }
 
           getNumber(function (error, number) {
@@ -455,8 +457,8 @@ const Useractivate = async (email, res) => {
       );
 
       const send = require("gmail-send")({
-        user: "chaincome2020@gmail.com",
-        pass: "eheypsrlkrhyjbio",
+        user: process.env.Mailstore,
+        pass: process.env.pass,
         to: email,
         subject: "Activate your account",
         html: `<!DOCTYPE html>
@@ -602,7 +604,7 @@ const Useractivate = async (email, res) => {
                                             <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
                                                 <table border="0" cellspacing="0" cellpadding="0">
                                                     <tr>
-                                                        <td align="center" style="border-radius: 3px;" bgcolor="#FFA73B"><a href="https://newchaincome.herokuapp.com/active/${token[0].activeToken}" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;">Confirm Account</a></td>
+                                                        <td align="center" style="border-radius: 3px;" bgcolor="#FFA73B"><a href="${process.env.Call_Back}/active/${token[0].activeToken}" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;">Confirm Account</a></td>
                                                     </tr>
                                                 </table>
                                             </td>
@@ -683,15 +685,14 @@ const Useractivate = async (email, res) => {
 const Newuseractivate = async (email, res) => {
   User.find({ email: email }, { activeToken: 1, _id: 0, myparentref: 1 }).then(
     async (token) => {
-      await User.findOneAndUpdate({ myref: token[0].myparentref })
+      await User.findOne({ myref: token[0].myparentref })
         .then(async (parent) => {
           if (parent) {
             const commission = await Setting.find({}, { commission: 1 });
             if (commission) {
               parent.earning =
                 parseInt(parent.earning) + parseInt(commission[0].commission);
-              parent.myrefused = parseInt(parent.myrefused) + 1;
-
+              parent.myrefused = parseInt(parent.myrefused) + parseInt("1");
               parent
                 .save()
                 .then((data) => {
@@ -731,8 +732,8 @@ const Newuseractivate = async (email, res) => {
         });
 
       options = {
-        user: "chaincome2020@gmail.com",
-        pass: "eheypsrlkrhyjbio",
+        user: process.env.Mailstore,
+        pass: process.env.pass,
         to: email,
         subject: "Activate your account",
         html: `<!DOCTYPE html>
@@ -878,7 +879,7 @@ const Newuseractivate = async (email, res) => {
                                             <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
                                                 <table border="0" cellspacing="0" cellpadding="0">
                                                     <tr>
-                                                        <td align="center" style="border-radius: 3px;" bgcolor="#FFA73B"><a href="https://newchaincome.herokuapp.com/active/${token[0].activeToken}" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;">Confirm Account</a></td>
+                                                        <td align="center" style="border-radius: 3px;" bgcolor="#FFA73B"><a href="${process.env.Call_Back}/active/${token[0].activeToken}" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;">Confirm Account</a></td>
                                                     </tr>
                                                 </table>
                                             </td>
